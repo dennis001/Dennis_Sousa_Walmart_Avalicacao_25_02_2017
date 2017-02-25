@@ -8,5 +8,6 @@ Funcionalidade: Carrinho
 
 Cenario: Adicionar produtos ao carrinho
 	Dado que esteja na home do Walmart
-	Quando acessar o ca
-	Então 
+	Quando pesquisar o produto
+	Então verificar se está na pagina do produto
+	E validar o produto no carrinho
