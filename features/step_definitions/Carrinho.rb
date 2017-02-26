@@ -15,5 +15,6 @@ end
 
 Então(/^validar o produto no carrinho$/) do
   click_link("Meu carrinho")
-  sleep 5
+  assert_text("Fralda Huggies Turma Monica Supreme Care Meninas Tam G - 32 Unidades - G - Huggies
+Vendido e entregue por Walmart")
 end
