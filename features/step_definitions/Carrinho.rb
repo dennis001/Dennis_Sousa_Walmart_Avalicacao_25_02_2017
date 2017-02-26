@@ -11,7 +11,6 @@ Então(/^verificar se está na pagina do produto$/) do
   assert_text("Fralda Huggies Turma Monica Supreme Care Meninas Tam G - 32 Unidades")
   click_on("Fralda Huggies Turma Monica Supreme Care Meninas Tam G - 32 Unidades", match: :first)
   click_button("Adicionar ao carrinho")
-  sleep 5
 end
 
 Então(/^validar o produto no carrinho$/) do
