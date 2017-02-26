@@ -1,5 +1,6 @@
 Dado(/^que esteja na home do Walmart$/) do
   visit "http://www.walmart.com.br"
+  
 end
 
 Quando(/^pesquisar o produto$/) do
@@ -18,3 +19,24 @@ Então(/^validar o produto no carrinho$/) do
   assert_text("Fralda Huggies Turma Monica Supreme Care Meninas Tam G - 32 Unidades - G - Huggies
 Vendido e entregue por Walmart")
 end
+
+Dado(/^que o produto já esta no carrinho de compras$/) do
+  click_button("Finalizar compra", match: :first)
+  #new_window = window_opened_by (click_link"login-link topbar-buttons button-link topbar-login-js")
+  #within_window new_window do
+ # visit ""
+  fill_in "signinField", :with => "dennisdesousa.ds@gmail.com"
+  	#end
+end
+
+Quando(/^os dados de login já tenham sido preenchidos$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Entao(/^conclua a compra selecionando os dados de entrega$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Entao(/^gere o boleto$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end                                                        

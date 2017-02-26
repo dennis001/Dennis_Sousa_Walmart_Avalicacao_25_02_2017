@@ -11,3 +11,10 @@ Cenario: Adicionar produtos ao carrinho
 	Quando pesquisar o produto
 	Então verificar se está na pagina do produto
 	E validar o produto no carrinho
+
+@test	
+Cenario: Compra completa
+	Dado que o produto já esta no carrinho de compras
+	Quando os dados de login já tenham sido preenchidos
+	Entao conclua a compra selecionando os dados de entrega
+	E gere o boleto
