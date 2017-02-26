@@ -14,5 +14,6 @@ Então(/^verificar se está na pagina do produto$/) do
 end
 
 Então(/^validar o produto no carrinho$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_link("Meu carrinho")
+  sleep 5
 end
