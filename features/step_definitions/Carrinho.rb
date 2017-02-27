@@ -22,21 +22,31 @@ end
 
 Dado(/^que o produto já esta no carrinho de compras$/) do
   click_button("Finalizar compra", match: :first)
-  new_window = window_opened_by (click_link"login-link topbar-buttons button-link topbar-login-js")
-  within_window new_window do
-  page.driver.browser.switch_to.window(page.driver.browser.window_handles.last)
-  fill_in "signinField", :with => "dennisdesousa.ds@gmail.com"
-  	end
+  login_window = page.driver.find_window('iframeLogin')
+  	main_window = page.driver.find_window('')
+  #visit "https://www2.walmart.com.br/login?modal=true&continue=https://connect.walmart.com.br/connect/authorize?response_type=code&client_id=walmart_checkout&redirect_uri=https://www2.walmart.com.br/checkout/services/transaction/oauth/callback/walmart_checkout"
+  #new_window = window_opened_by {click_link'https://www2.walmart.com.br/login?modal=true&continue=https://connect.walmart.com.br/connect/authorize?response_type=code&client_id=walmart_checkout&redirect_uri=https://www2.walmart.com.br/checkout/services/transaction/oauth/callback/walmart_checkout'}
+	#within_window new_window do
+  #assert_text("Já tem cadastro?")
+ 	page.within_window(login_window) do
+ 	
+	  	fill_in "signinField", :with => "dennisdesousa.ds@gmail.com"
+  		fill_in "password", :with => "D.632256"
+  		click_button("Entrar")
+ 	#visit "https://www2.walmart.com.br/checkout/content/#chooseAddress"
+ end
 end
 
 Quando(/^os dados de login já tenham sido preenchidos$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_button("Entregar nesse endereço")
+  click_button("Continuar", match: :first)
 end
 
 Entao(/^conclua a compra selecionando os dados de entrega$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  click_link("Boleto bancário")
+  click_button("Finalizar compra")
 end
 
 Entao(/^gere o boleto$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  #assert_text # Write code here that turns the phrase above into concrete actions
 end                                                        
