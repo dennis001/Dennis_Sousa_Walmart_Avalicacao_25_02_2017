@@ -22,11 +22,11 @@ end
 
 Dado(/^que o produto já esta no carrinho de compras$/) do
   click_button("Finalizar compra", match: :first)
-  #new_window = window_opened_by (click_link"login-link topbar-buttons button-link topbar-login-js")
-  #within_window new_window do
- # visit ""
+  new_window = window_opened_by (click_link"login-link topbar-buttons button-link topbar-login-js")
+  within_window new_window do
+  page.driver.browser.switch_to.window(page.driver.browser.window_handles.last)
   fill_in "signinField", :with => "dennisdesousa.ds@gmail.com"
-  	#end
+  	end
 end
 
 Quando(/^os dados de login já tenham sido preenchidos$/) do
