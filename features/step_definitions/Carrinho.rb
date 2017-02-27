@@ -49,6 +49,7 @@ end
 
 Entao(/^gere o boleto$/) do
  assert_text("Boleto bancário")
- find(".active").click
- # click_button("Finalizar compra")
+ find(".active", match: :first).click
+ click_button("Finalizar compra")
+ assert_text("Seu pedido foi enviado com sucesso! Obrigado por comprar no Walmart")
 end                                                        
